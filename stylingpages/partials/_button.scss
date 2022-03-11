@@ -1,0 +1,14 @@
+.menu-btn {
+    justify-self: center;
+    align-self: center;
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    background: rgba(178, 34, 34, 0.8);
+    
+    a {
+        font-weight: 900;
+        color: #383838;
+    }
+}

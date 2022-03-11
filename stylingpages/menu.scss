@@ -1,0 +1,96 @@
+@import url(https://fonts.googleapis.com/css?family=Sacramento:regular);
+@import 'partials/header';
+@import 'partials/footer';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: lato;
+    a, p, h3 {
+        text-decoration: none;
+        color: firebrick;
+    }
+    
+}   
+
+html {
+    overflow-x: hidden;
+    width: 100vw;
+    background-color: tan;
+}
+
+// Small screen size mobile
+
+
+body {
+        display: grid;
+        grid-template-columns: 1fr;
+}
+
+.menu-grid {
+        position: relative;
+        top: 100px;
+        display: grid;
+        
+        .box {
+            position: relative;
+            display: grid;
+            
+            
+            
+            justify-items: center;
+            align-items: center;
+            
+            width: 100%;
+            
+            
+            .menu-list {
+                display: grid;
+                
+                width: 80%;
+                .item {
+                    display: grid;
+                    grid-template-columns: 3fr 1fr;
+                    grid-template-rows: 1fr 2fr;
+                    
+                        .food-description {
+                            grid-column: 1 / 2;
+                            grid-row: 2 / 3;
+                            padding: 0.5rem;
+                                }
+                            .food-price {
+                                grid-column: 2 / 3;
+                                grid-row: 2 / 3;
+                                justify-self: center;
+                                }
+                            }
+                }
+                .pizza-menu-pic {
+                    display: inline-block;
+                    position: absolute;
+                    top: 2%;
+                    left: 2%;
+                    box-sizing: border-box;
+                    width: 20%;
+                    height: auto;
+                    
+                    
+
+                }
+    }
+        
+}
+
+@media screen and (min-width: 600px) {
+    .menu-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .menu-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
