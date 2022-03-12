@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 @import 'stylingpages/partials/header';
+@import 'stylingpages/partials/submenu';
 @import 'stylingpages/partials/footer';
 @import 'stylingpages/partials/button';
 
@@ -8,60 +9,52 @@
     padding: 0;
     box-sizing: border-box;
     font-family: lato;
-    
     a, p, h3 {
         text-decoration: none;
         color: firebrick;
-        
     }
-    
-    
+    hr {
+        border-top: 1px solid #383838;
+    }
 }   
-
 html {
     overflow-x: hidden;
     width: 100vw;
     background-color: rgb(218, 196, 167);
     
 }
-
-// Small screen size mobile
-
-
 body {
-        display: grid;
-        grid-template-columns: 1fr;
-        
+    display: grid;
+    grid-template-columns: 1fr;
+    position: absolute;
+    top: 150px;
 }
-.section-break {
-
-        position: relative;
-        top: 100px;
-    
-}
-
 .main {
-        position: relative;
-        top: 100px;
-        display: grid;
-        padding: 2%;
-        justify-items: center;
-        h2 {display: inline-block;
-            position: relative;
-            top: -3rem;
-            }
+    display: grid;
+    padding: 2%;
+    
         p {
+            
             font-size: 1.5rem;
         }
 }            
 .main-logo {
-    display: inline-block;
-    width: 250px;
-    position: relative;
+    display: grid;
+    img {
+        justify-self: center;
+        height: 250px;
+        width: auto;
+    }
+    h2 {
+        font-size: 1.5rem;
+        text-align: left;
+        color: firebrick;
+    }
+    
     
 }  
 .hero { 
-    position: relative;
+    
     background-image: url("https://c0.wallpaperflare.com/preview/839/412/980/food-and-drink-pizza-pizzas-tomato.jpg");
     background-size: cover;
     background-position: center;
@@ -113,185 +106,135 @@ body {
                         
                         }
 }
-
 .tag-btn {
+
     display: grid;
-    height: 200px;
-
+    position: relative;
+    height: 350px;
+    width: auto;
+    
+    .tag-p {
+        display: block;
+        position: relative;
+        top: 50%;
+        left: 2%;
+        font-weight: 600;
+        width: auto;
+        font-size: 1.5rem;
+    }
 }
-
 .contents {
+            position: relative;
             display: grid;
             grid-template-columns: 1fr;
             text-align: center;
-            height: 1000px;
+            
+            hr {
+                display: none;
+            }
             p {
-                
+                font-weight: 600;
                 text-align: center;
+                position: relative;
+                
                 }
             .contents-1, .contents-2 {
                 display: grid;
                 align-items: center;
-                img {
-                    object-fit: contain;
-                    width: 100%;
-                    height: 150px;
-                    }
-                    p {
-                        padding: 5%;
-                    }
-                    }
+            img {
+                object-fit: contain;
+                width: auto;
+                height: 190px;
+                border-radius: 3px;
+                padding: 2%;
+                //box-shadow: -3px 3px 1px 1px #383838;
+                }
+            p {
+                padding: 5%;
+                }
+                }
             
-}
-                
-            
-
-.submenu {
-        display: grid;
-        height: 500px;
-        grid-gap: 5px;
-        position: relative;
-        top: 100px;
-        justify-items: center;
-        padding-top: 1%;
-            div {
-                display: inline-block;
+            .contents-2 {
                 position: relative;
+                grid-template-rows: repeat(4, 1fr);
                 
+                .contents-p-2 {
+                    justify-self: left;    
                 }
-            h4 {
-                text-align: center;
-                margin: auto;
-                font-size: 1.5rem;
-                padding-bottom: 5%;
-                }
-            ul {
-                padding-top: 5%;
-                display: inline-block;
-                list-style: none;
-                display: grid;
-                
-                grid-gap: 10px;
-                    li {
-                        
-                        text-align: center;
-                        font-size: 1rem;
+                .pizza-pic {
+                    justify-self: right;
+                    }
+                .stove-pic {
+                    justify-self: left;
+                    }
+                    .serving-pic {
+                        justify-self: right;
                     }
                 }
-                .contact-info {
-                    position: relative;
-                    display: grid;
-                    grid-template-columns: 2fr repeat(3, 1fr) 2fr;
-                    grid-gap: 3px;
-                    align-items: center;
-                    
-                    p {
-                        display: inline;
-                        text-align: center;
-                        grid-column: 1 / 6;
-                        
-                        
-                    }
-                    
-                    hr {
-                        
-                        
-                        grid-column: 1 / 6;
-                        grid-row: 2 / 3;
-                    }
-                
-                    .fb {
-                        
-                        display: inline-block;
-                        justify-self: center;
-                        grid-column: 2 / 3;
-                        grid-row: 3 / 4;
-                    }
-                    .tw {
-                        
-                        display: inline-block;
-                        justify-self: center;
-                        grid-column: 3 / 4;
-                        grid-row: 3 / 4;
-                    }
-                    .insta {
-                        
-                        display: inline-block;
-                        justify-self: center;
-                        grid-column: 4 / 5;
-                        grid-row: 3 / 4;
-                    }
-                    
-
-                }
-                
-            }
-
-
-
+}
 
 
 @media screen and (min-width: 600px) {
     .main {
         h2 {
-            font-size: 2rem;
+            font-size: 2.2rem;
         }
     }
     .tag-btn {
-        p {
-            font-size: 1.8rem;
+        .tag-p {
+            font-size: 2.3rem;
+
         }
     }
-        .contents {
+    .contents {
+        .contents-1, .contents-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             
-            .contents-1, .contents-2 {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                grid-gap: 1%;
                 img {
-                    height: 190px;
+                    height: 220px;
+                    width: auto;
                     }
                     p {
-                        font-size: 1.8rem;
+                        font-size: 2.3rem;
                     }
                 
                 }
             .contents-1 {
-                .menu-btn {
-                    grid-column: 1 / 3;
-                    }
+                
+                .contents-p-1 {
+                    text-align: center;
+                }
                 
                 }
             .contents-2 {
-                p, .menu-btn {
-                    grid-column: 1 / 3;
+                
+                .pizza-pic {
+                    
+                    grid-column: 2 / 3;
+                }
+                .stove-pic {
+                    grid-column: 1 / 2;
+                    grid-row: 2 / 3;
+                    
+                }
+                .serving-pic {
+                    grid-column: 2 / 3;
+                    grid-row: 3 / 4;
+                }
+                .contents-p-2 {
+                    
+                    grid-column: 1 / 2;
+                    grid-row: 1 / 2;
+                    
+                
+                    
+                    }
+                .menu-btn {
+                        grid-column: 1 / 2;
+                        grid-row: 3 / 5;
                     }
                 }
-    }
-        
-        
-        
-
-.submenu {
-        grid-template-columns: repeat(2, 1fr);
-        
-        .quick-menu {
-            grid-column: 1 / 2;
-        }
-        .quick-links {
-            grid-column: 2 / 3;
-        }
-        .contact-info {
-            grid-column: 1 / 3;
-            p {
-                font-size: 1.3rem;
-            }
-        }
-        ul {
-            li {
-                font-size: 1.3rem;
-            }
-        }
     }
 }
 
@@ -302,15 +245,69 @@ body {
         }
     }
     .main-logo {
-        width: 400px;
+        width: 100%;
+        padding-bottom: 5%;
+        img {
+            
+            height: 350px;
+            width: auto;
+        }
+    }
+    .tag-btn {
+        .tag-p {
+            font-size: 2.7rem;
+            
+            
+        }
     }
     .contents {
+        
     .contents-1, .contents-2 {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         img {
-            height: 225px;
+            height: 250px;
+            width: auto;
         }
+        p {
+            font-size: 2.7rem;
+            font-weight: 600;
+        }
+        
+    }
+    .contents-1 {
+        
+        p {
+            grid-column: 2 / 4;
+            grid-row: 1 / 2;
+        }
+        img {
+            grid-column: 1 / 2;
+        }
+    }
+    .contents-2 {
+        grid-template-rows: repeat(3, 1fr);
+        .contents-p-2 {
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
+            text-align: start;
+        }
+        .pizza-pic {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
+        } 
+        .stove-pic {
+            grid-column: 1 / 2;
+            grid-row: 2 / 4;
+        }
+        .serving-pic {
+            grid-column: 3 / 4;
+            grid-row: 2 / 4;
+        }
+        .menu-btn {
+            grid-column: 2 / 3;
+            grid-row: 3 / 4;
+            }
     }
 }
 }

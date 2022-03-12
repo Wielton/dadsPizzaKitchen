@@ -2,7 +2,7 @@
 
 header {
     display: grid;
-    grid-template-columns: 75px 75px 1fr 100px;
+    grid-template-columns: 100px 100px 1fr 100px;
     height: 100px;
     position: fixed;
     top: 0;
@@ -12,26 +12,36 @@ header {
     z-index: 1;
     background-color: #383838;
     align-items: center;
-    justify-items: center;
+    justify-items: stretch;
 }
     
 .tablet-links {
     display: none;
+    position: relative;
+    grid-gap: 1%;
+    max-width: 500px;
+    padding: 3%;
 }
-.phone {
+.phone-link {
     display: inline-block;
-    
+    justify-self: center;
+    .fa-phone {
+        font-size: 2rem;
+        opacity: 0.8;
+    }
     
 }
 
 .logo {
     grid-column: 4 / 5;
-    
+    img {
+        display: inline-block;
+    }
 }
 img {
     display: inline-block;
     width: 100px;
-}
+    }
 
 
 // @media queries
@@ -40,17 +50,23 @@ img {
     header {
         
         grid-template-columns: 4fr 1fr 100px;
-        justify-items: stretch;
+        
         .tablet-links {
-            position: relative;
-            grid-column: 1 / 2;
             display: grid;
+            grid-column: 1 / 2;
             grid-template-columns: repeat(3, 1fr);
-            grid-gap: 1%;
-            max-width: 500px;
-            padding: 3%;
-            a {
-                font-size: 1.25rem;
+            @media screen and (min-width: 992px) {
+                grid-gap: 5%;
+            }
+            a { font-weight: 800;
+                font-size: 1.75rem; 
+                @media screen and (min-width: 768px) {
+                    font-size: 2rem;
+                }
+                @media screen and (min-width: 992px) {
+                    font-size: 2.3rem;
+                }
+                
             }
             .tablet-link-1 {
                 grid-column: 1 / 2;
@@ -67,7 +83,7 @@ img {
         }
     }
     
-    nav {
+    .navbar {
         display: none;
         }
     .phone-link {
@@ -77,3 +93,4 @@ img {
     
     
 }
+

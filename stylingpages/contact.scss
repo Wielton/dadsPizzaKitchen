@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import 'partials/header';
+@import 'partials/submenu';
+@import 'partials/footer';
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: lato;
+    a, p, {
+        text-decoration: none;
+        color: firebrick;
+    }
+    hr {
+        border-top: 1px solid #383838;
+    }
+}   
+html {
+    overflow-x: hidden;
+    width: 100vw;
+    background-color: rgb(218, 196, 167);
+    
+}
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    position: absolute;
+    top: 150px;
+}
+hr {
+    display: inline-block;
+    justify-self: center;
+    width: 85%;
+    
+}
+.main-grid {
+    display: grid;
+    padding: 2%;
+    text-align: center;
+    h1 {
+        font-size: 2.5rem;
+        padding-bottom: 10%;
+        }
+    p {
+        font-weight: 600;
+        font-size: 1.5rem;
+        padding-bottom: 10%;
+    }
+    h4 {
+        font-size: 1.2rem;
+        padding-bottom: 1%;
+    }
+    h5 {
+        font-size: 1rem;
+        
+    }
+    h3 {
+        padding-top: 10%;
+        padding-bottom: 20%;
+    }
+    
+    .contact-pic {
+        position: relative;
+        padding-bottom: 20%;
+        img {
+            height: 300px;
+            width: auto;
+        }
+    }
+    .map {
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+    
+    
+    iframe {
+        left:0;
+        top:0;
+        height:100%;
+        width:100%;
+        position:absolute;
+        }
+    }
+
+}
+@media screen and (min-width: 600px) {
+    .main-grid {
+        grid-template-columns: repeat(2, 1fr);
+        .contact-pic {
+                top: 50px;
+            img {
+                height: 400px;
+                }
+            }
+        .map {
+            left: 20%;
+            iframe {
+                grid-column: 2 / 3;
+                grid-row: 2 / 3;
+            }
+        }
+    }
+
+
+}
+@media screen and (min-width: 992px) {
+    .main-grid {
+        grid-template-columns: repeat(3, 1fr);
+        .contact {
+            position: relative;
+            left: 25%;
+        }
+        .contact-pic {
+            grid-column: 3 / 4;
+            top: 0;
+            right: 25%;
+        }
+        .map {
+            left: 100%;
+            iframe {
+                
+                
+            }
+        }
+    }
+}

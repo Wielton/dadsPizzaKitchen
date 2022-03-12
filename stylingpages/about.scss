@@ -1,66 +1,69 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 @import 'partials/header';
+@import 'partials/submenu';
 @import 'partials/footer';
-
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: lato;
-    a, p, h3 {
+    a, p {
+        
         text-decoration: none;
         color: firebrick;
     }
-    
+    hr {
+        border-top: 1px solid #383838;
+    }
 }   
-
 html {
     overflow-x: hidden;
     width: 100vw;
     background-color: rgb(218, 196, 167);
 }
-
-// Small screen size mobile
-
-
 body {
-        display: grid;
-        grid-template-columns: 1fr;
-        
-}
-.main {
-    position: relative;
-    top: 100px;
     display: grid;
     grid-template-columns: 1fr;
-    padding: 5%;
-    height: 1500px;
-    justify-items: center;
-    align-items: center;
-    img {
-        width: 100%;
-        height: 150px;
+    position: absolute;
+    top: 150px;
+}
+.main {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 2%;
+    justify-content: center;
+    
+    font-weight: 600;
+    .dough-pic, .calzone-pic, .video {
+        padding: 10%;
+        display: inline-block;
+        text-align: center;
+        img {
+            width: 250px;
+            height: auto;
+            
+            
+        }
+        p {
+            font-size: 1.5rem;
+        }
     }
-    p {
-        font-size: 1.5rem;
-    }
-    .about-1 {
+    .calzone-pic {
         
     }
     .contents-video {
         display: inline-block;
         position: relative;
         overflow: hidden;
-        
-        
-            .video {
-                position: relative;
-            
-                
-                height: auto;
-                }
+        padding-top: 28.125%;
+        padding-bottom: 28.125%;
+        .video {
+            position: absolute;
+            height: 100%;
+            width: auto;
             }
+        }
     
         
     }
@@ -68,6 +71,9 @@ body {
     @media screen and (min-width: 600px) {
         .main {
             grid-template-columns: repeat(2, 1fr);
+            .contents-video {
+                left: 75%;
+            }
         }
     }
 
