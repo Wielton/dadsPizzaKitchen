@@ -108,7 +108,7 @@ header {
   opacity: 0.8;
 }
 
-h3 {
+.phone-number {
   display: inline-block;
   position: absolute;
   top: 2%;
@@ -465,6 +465,10 @@ h3 {
   text-decoration: none;
 }
 
+* hr {
+  border-top: 1px solid #383838;
+}
+
 html {
   overflow-x: hidden;
   width: 100vw;
@@ -477,7 +481,7 @@ body {
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-  position: absolute;
+  position: relative;
   width: 100%;
   top: 150px;
 }

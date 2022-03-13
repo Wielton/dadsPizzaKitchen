@@ -108,7 +108,7 @@ header {
   opacity: 0.8;
 }
 
-h3 {
+.phone-number {
   display: inline-block;
   position: absolute;
   top: 2%;
@@ -406,9 +406,8 @@ h3 {
   font-family: lato;
 }
 
-* a, * p {
+* a {
   text-decoration: none;
-  color: firebrick;
 }
 
 * hr {
@@ -466,8 +465,13 @@ hr {
 }
 
 .main-grid h3 {
+  color: #383838;
   padding-top: 10%;
   padding-bottom: 20%;
+}
+
+.main-grid h3 a {
+  color: firebrick;
 }
 
 .main-grid .contact-pic {
