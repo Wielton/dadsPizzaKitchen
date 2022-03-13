@@ -9,7 +9,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: lato;
-    a, p, h2, h3 {
+    a, p, h2 {
         text-decoration: none;
         color: #b22222;
     }
@@ -23,6 +23,7 @@
 html {
     overflow-x: hidden;
     width: 100vw;
+    scroll-behavior: smooth;
     background-color: rgb(218, 196, 167); 
 }
 body {
@@ -36,6 +37,7 @@ body {
     align-items: center;
     position: relative;
     padding-bottom: 5%;
+    
     h2 {
         padding-bottom: 5%;
         text-align: left;
@@ -56,17 +58,20 @@ body {
         } 
     p {
         text-align: left;
+        font-weight: 600;
     }
     img {
             display: inline-block;
             height: 125px;
             width: auto;
             justify-self: center;
+            
     }
     .menu-box {
         display: grid;
         text-align: center;
         align-items: center;
+        padding-bottom: 5%;
         hr {
             width: 50%;
         }
@@ -79,10 +84,11 @@ body {
             display: grid;
             width: 90%;
             justify-self: center;
-            
+            padding: 5% 1%;
             .item {
                 display: grid;
                 grid-template-columns: 3fr 1fr;
+                padding: 3% 1%;
                     .food-title {
                         padding-top: 2%;
                         font-size: 1.5rem;

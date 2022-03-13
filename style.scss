@@ -9,17 +9,17 @@
     padding: 0;
     box-sizing: border-box;
     font-family: lato;
-    a, p, h3 {
+    position: relative;
+    a {
         text-decoration: none;
-        color: firebrick;
     }
-    hr {
-        border-top: 1px solid #383838;
-    }
+    
+    
 }   
 html {
     overflow-x: hidden;
     width: 100vw;
+    scroll-behavior: smooth;
     background-color: rgb(218, 196, 167);
     
 }
@@ -27,23 +27,33 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     position: absolute;
+    width: 100%;
     top: 150px;
 }
 .main {
     display: grid;
     padding: 2%;
-    
+    width: 100%;
         p {
-            
+            color: firebrick;
+            font-weight: 600;
             font-size: 1.5rem;
         }
 }            
 .main-logo {
     display: grid;
+    width: 100%;
+    padding-bottom: 5%;
     img {
         justify-self: center;
-        height: 250px;
+        height: 200px;
         width: auto;
+        @media screen and (min-width: 300px) {
+            height: 250px;
+            }
+            @media screen and (min-width: 600px) {
+                height: 275px;
+                }
     }
     h2 {
         font-size: 1.5rem;
@@ -54,27 +64,28 @@ body {
     
 }  
 .hero { 
-    
+    position: relative;
     background-image: url("https://c0.wallpaperflare.com/preview/839/412/980/food-and-drink-pizza-pizzas-tomato.jpg");
     background-size: cover;
     background-position: center;
     display: grid;
     grid-template-columns: 1fr 2fr 2fr 1fr;
     grid-template-rows: repeat(4, 125px);
-    height: 500px;
+    height: auto;
     width: 100%;
     align-items: center;
     justify-items: center;
         h3 {
-            font-size: 2rem;
+            color: rgb(218, 196, 167);
+            font-size: 1.8rem;
                 @media screen and (min-width: 350px) {
-                    font-size: 2.2rem;
+                    font-size: 2rem;
                 }
                 @media screen and (min-width: 400px) {
-                    font-size: 2.5rem;
+                    font-size: 2.1rem;
                 }
                 @media screen and (min-width: 600px) {
-                    font-size: 3rem;
+                    font-size: 2.3rem;
                 }
             }
                 .motto-1 {
@@ -88,18 +99,21 @@ body {
                         }
                         }
                 .motto-2 {
+                    position: relative;
                     display: inline-block;
                         grid-column: 2 / 5;
                         grid-row: 2 / 3;
                         
                         }
                 .motto-3 {
+                    position: relative;
                     display: inline-block;
                         grid-column: 1 / 4;
                         grid-row: 3 / 4;
                         
                         }
                 .motto-4 {
+                    position: relative;
                     display: inline-block;
                         grid-column: 1 / 4;
                         grid-row: 4 / 5;
@@ -110,47 +124,38 @@ body {
 
     display: grid;
     position: relative;
-    height: 350px;
-    width: auto;
-    
+    height: auto;
+    width: 100%;
+    padding: 10%;
     .tag-p {
-        display: block;
-        position: relative;
-        top: 50%;
-        left: 2%;
-        font-weight: 600;
-        width: auto;
-        font-size: 1.5rem;
+        text-align: left;
+        padding: 10% 5%;
+        font-size: 1.3rem;
     }
+    
+    
 }
 .contents {
             position: relative;
             display: grid;
             grid-template-columns: 1fr;
             text-align: center;
-            
-            hr {
-                display: none;
-            }
             p {
                 font-weight: 600;
                 text-align: center;
                 position: relative;
-                
+                font-size: 1.3rem;
+                padding: 5%;
                 }
             .contents-1, .contents-2 {
                 display: grid;
                 align-items: center;
-            img {
-                object-fit: contain;
-                width: auto;
-                height: 190px;
-                border-radius: 3px;
-                padding: 2%;
-                //box-shadow: -3px 3px 1px 1px #383838;
-                }
-            p {
-                padding: 5%;
+                img {
+                    object-fit: contain;
+                    width: 100%;
+                    height: 190px;
+                    border-radius: 3px;
+                    padding: 2%;
                 }
                 }
             
@@ -182,28 +187,28 @@ body {
     }
     .tag-btn {
         .tag-p {
-            font-size: 2.3rem;
+            font-size: 2.2rem;
 
         }
     }
     .contents {
         .contents-1, .contents-2 {
-            display: grid;
+            
             grid-template-columns: repeat(2, 1fr);
             
                 img {
-                    height: 220px;
-                    width: auto;
+                    height: 210px;
+                    width: 100%;
                     }
                     p {
-                        font-size: 2.3rem;
+                        font-size: 2.2rem;
                     }
                 
                 }
             .contents-1 {
                 
                 .contents-p-1 {
-                    text-align: center;
+                    text-align: right;
                 }
                 
                 }
@@ -242,28 +247,17 @@ body {
     .main {
         h2 {
             font-size: 2.5rem;
+            }
         }
-    }
-    .main-logo {
-        width: 100%;
-        padding-bottom: 5%;
-        img {
-            
-            height: 350px;
-            width: auto;
-        }
-    }
     .tag-btn {
         .tag-p {
             font-size: 2.7rem;
-            
-            
+            }
         }
-    }
     .contents {
         
-    .contents-1, .contents-2 {
-        display: grid;
+        .contents-1, .contents-2 {
+        
         grid-template-columns: repeat(3, 1fr);
         img {
             height: 250px;
@@ -271,7 +265,7 @@ body {
         }
         p {
             font-size: 2.7rem;
-            font-weight: 600;
+            
         }
         
     }

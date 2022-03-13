@@ -3,7 +3,7 @@
 header {
     display: grid;
     grid-template-columns: 100px 100px 1fr 100px;
-    height: 100px;
+    height: 150px;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -21,30 +21,45 @@ header {
     grid-gap: 1%;
     max-width: 500px;
     padding: 3%;
+    a {
+        color: #dac4a7;
+        opacity: 0.35;
+        transition: .3s;
+        &:hover {
+            opacity: 1;
+        }
+    }
 }
 .phone-link {
     display: inline-block;
     justify-self: center;
+    
     .fa-phone {
-        font-size: 2rem;
+        color: #dac4a7;
+        font-size: 1.8rem;
         opacity: 0.8;
     }
     
 }
+h3 {
+    display: inline-block;
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    color: #dac4a7;
+
+}
 
 .logo {
     grid-column: 4 / 5;
-    img {
-        display: inline-block;
-    }
-}
 img {
     display: inline-block;
     width: 100px;
     }
+}
 
 
-// @media queries
+
 
 @media screen and (min-width: 600px) {
     header {
@@ -61,10 +76,10 @@ img {
             a { font-weight: 800;
                 font-size: 1.75rem; 
                 @media screen and (min-width: 768px) {
-                    font-size: 2rem;
+                    font-size: 1.9rem;
                 }
                 @media screen and (min-width: 992px) {
-                    font-size: 2.3rem;
+                    font-size: 2.1rem;
                 }
                 
             }
@@ -83,7 +98,7 @@ img {
         }
     }
     
-    .navbar {
+    .dropdown {
         display: none;
         }
     .phone-link {

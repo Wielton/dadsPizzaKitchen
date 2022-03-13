@@ -3,18 +3,29 @@
     position: relative;
     top: 100px;
     height: 75px;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 3fr 2fr 3fr 1fr;
-    position: relative;
     justify-items: center;
+    align-items: center;
     background-color: #383838;
     .p1 {
+        color: #dac4a7;
+        font-size: 1.1rem;
         grid-column: 1 / 6;
         grid-row: 1 / 2;
+        @media screen and (min-width: 350px) {
+            font-size: 1.2rem;
+        }
     }
     .p2 {
+        color: #dac4a7;
+        font-size: 1.1rem;
         grid-column: 1 / 6;
         grid-row: 2 / 3;
+        @media screen and (min-width: 350px) {
+            font-size: 1.2rem;
+        }
     }
     
 }
