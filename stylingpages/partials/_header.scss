@@ -5,6 +5,7 @@ header {
     grid-template-columns: 100px 100px 1fr 100px;
     height: 150px;
     position: fixed;
+    width: 100%;
     top: 0;
     bottom: 0;
     left: 0;
@@ -13,59 +14,68 @@ header {
     background-color: #383838;
     align-items: center;
     justify-items: stretch;
-}
-    
-.tablet-links {
-    display: none;
-    position: relative;
-    grid-gap: 1%;
-    max-width: 500px;
-    padding: 3%;
-    a {
+    .tablet-links {
+        display: none;
+        position: relative;
+        grid-gap: 1%;
+        max-width: 500px;
+        height: 150px;
+        padding: 3%;
+        align-items: center;
+        justify-items: center;
+        a {
+            color: #dac4a7;
+            opacity: 0.35;
+            transition: .3s;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+    .phone-link {
+        display: inline-block;
+        justify-self: center;
+    .fa-phone {
         color: #dac4a7;
+        font-size: 1.8rem;
         opacity: 0.35;
         transition: .3s;
         &:hover {
             opacity: 1;
+            }
         }
     }
-}
-.phone-link {
-    display: inline-block;
-    justify-self: center;
-    
-    .fa-phone {
+    .phone-number {
+        display: inline-block;
+        position: absolute;
+        top: 2%;
+        left: 2%;
         color: #dac4a7;
-        font-size: 1.8rem;
-        opacity: 0.8;
-    }
-    
-}
-.phone-number {
+        }  
+    .logo {
     display: inline-block;
-    position: absolute;
-    top: 2%;
-    left: 2%;
-    color: #dac4a7;
-
-}
-
-.logo {
+    position: relative;
     grid-column: 4 / 5;
-img {
-    display: inline-block;
-    width: 100px;
+    img {
+        height: 100px;
+        opacity: 0.35;
+        transition: .3s;
+        &:hover {
+            opacity: 1;
+            }
+        }
     }
-}
 
 
 
 
-@media screen and (min-width: 600px) {
-    header {
+    @media screen and (min-width: 600px) {
+    
         
         grid-template-columns: 4fr 1fr 100px;
-        
+        @media screen and (min-width: 1280px) {
+            grid-template-columns: 4fr 1fr 150px;
+        }
         .tablet-links {
             display: grid;
             grid-column: 1 / 2;
@@ -81,6 +91,9 @@ img {
                 @media screen and (min-width: 992px) {
                     font-size: 2.1rem;
                 }
+                @media screen and (min-width: 1280px)  {
+                    font-size: 3rem;
+                }
                 
             }
             .tablet-link-1 {
@@ -95,8 +108,12 @@ img {
         }
         .logo {
             grid-column: 3 / 4;
+            img {
+                height: 150px;
+            }
+
         }
-    }
+    
     
     .dropdown {
         display: none;
@@ -104,7 +121,8 @@ img {
     .phone-link {
         display: none;
             }
-    
+        }
+
     
     
 }

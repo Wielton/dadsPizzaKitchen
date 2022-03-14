@@ -17,7 +17,7 @@
     a {
         font-size: 1.2rem;
         font-weight: 1000;
-        color: rgb(218, 196, 167);
+        color: rgb(250, 228, 199);
     }
 }
 @media screen and (min-width: 600px) {
@@ -42,5 +42,11 @@
         .menu-btn {
             align-self: end;
         }
+    }
+}
+@media screen and (min-width: 1400px) {
+    .menu-btn {
+        width: 160px;
+        height: 160px;    
     }
 }
