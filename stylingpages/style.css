@@ -70,7 +70,7 @@ header {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 3;
   background-color: #383838;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -225,9 +225,15 @@ header .logo img:hover {
     -ms-grid-column-span: 1;
     grid-column: 3 / 4;
   }
+}
+
+@media screen and (min-width: 600px) and (min-width: 1280px) {
   header .logo img {
     height: 150px;
   }
+}
+
+@media screen and (min-width: 600px) {
   header .dropdown {
     display: none;
   }
@@ -344,6 +350,7 @@ header .logo img:hover {
   -ms-grid-column-span: 5;
   grid-column: 1 / 6;
   padding-bottom: 2%;
+  color: #383838;
 }
 
 .submenu .contact-info p a {
@@ -570,7 +577,6 @@ html {
   overflow-x: hidden;
   width: 100vw;
   scroll-behavior: smooth;
-  background-color: firebrick;
 }
 
 body {
@@ -903,6 +909,9 @@ body {
   font-weight: 600;
   font-size: 1.5rem;
   text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 @media screen and (min-width: 600px) {

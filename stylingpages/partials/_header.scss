@@ -1,5 +1,9 @@
 @import 'navbar';
 
+// Header is a component and used across all pages with the navbar injected from
+// the _navbar.scss partial component
+
+
 header {
     display: grid;
     grid-template-columns: 100px 100px 1fr 100px;
@@ -10,10 +14,12 @@ header {
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 3;
     background-color: #383838;
     align-items: center;
     justify-items: stretch;
+
+    // Hidden until Tablet size
     .tablet-links {
         display: none;
         position: relative;
@@ -32,6 +38,8 @@ header {
             }
         }
     }
+
+    // Only clickable on MOBILE size and is hidden at TABLET size
     .phone-link {
         display: inline-block;
         justify-self: center;
@@ -56,6 +64,7 @@ header {
     display: inline-block;
     position: relative;
     grid-column: 4 / 5;
+    // LOGO 
     img {
         height: 100px;
         opacity: 0.35;
@@ -68,23 +77,33 @@ header {
 
 
 
+    // TABLET
 
     @media screen and (min-width: 600px) {
-    
-        
         grid-template-columns: 4fr 1fr 100px;
+
+        // DESKTOP grid
         @media screen and (min-width: 1280px) {
             grid-template-columns: 4fr 1fr 150px;
         }
+        
+        // Displayed at TABLET size and up
+        
         .tablet-links {
             display: grid;
             grid-column: 1 / 2;
             grid-template-columns: repeat(3, 1fr);
+
+            // DESKTOP size
+            
             @media screen and (min-width: 992px) {
                 grid-gap: 5%;
             }
             a { font-weight: 800;
                 font-size: 1.75rem; 
+
+                // Nested @media queries for targeted responsiveness
+                
                 @media screen and (min-width: 768px) {
                     font-size: 1.9rem;
                 }
@@ -96,6 +115,8 @@ header {
                 }
                 
             }
+
+            // Grid injections
             .tablet-link-1 {
                 grid-column: 1 / 2;
                 }
@@ -106,15 +127,18 @@ header {
                 grid-column: 3 / 4;
             }
         }
+
+        // Grid injection and size at 1280px width
         .logo {
             grid-column: 3 / 4;
+            @media screen and (min-width: 1280px) {
             img {
                 height: 150px;
             }
-
         }
-    
-    
+        }
+
+    // Hidden on TABLET and up
     .dropdown {
         display: none;
         }
@@ -122,8 +146,5 @@ header {
         display: none;
             }
         }
-
-    
-    
-}
+    }
 

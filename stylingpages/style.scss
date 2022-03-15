@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
-@import 'stylingpages/partials/header';
-@import 'stylingpages/partials/submenu';
-@import 'stylingpages/partials/footer';
-@import 'stylingpages/partials/button';
+@import 'partials/header';
+@import 'partials/submenu';
+@import 'partials/footer';
+@import 'partials/button';
 
+
+//  My first real dive into trying to nest and organize.
 * {
     margin: 0;
     padding: 0;
@@ -23,8 +25,10 @@ html {
     overflow-x: hidden;
     width: 100vw;
     scroll-behavior: smooth;
-    background-color: firebrick;
+    
 }
+
+// Body is set at a default 1fr grid for mobile-responsiveness 
 body {
     display: grid;
     grid-template-columns: 1fr;
@@ -53,11 +57,18 @@ body {
         }
     }
     
-}            
+}
+
+//  Here I begin a different media query structure because only a few specific
+// elements are targeted and it was easier to follow the reponsiveness and positioning for
+// the HERO section
+// All media queries for these elements are nested within this block
 .main-logo {
     display: grid;
     width: 100%;
     padding-bottom: 5%;
+
+    // LOGO is fully responsive across all media screen sizes
     img {
         justify-self: center;
         height: 200px;
@@ -84,6 +95,10 @@ body {
         color: firebrick;
         }
 }  
+
+//  The background image is set to a grid for the h3 text positioning
+// for full responsiveness
+// All media queries for these elements are nested within this block
 .hero { 
     position: relative;
     background-image: url("https://c0.wallpaperflare.com/preview/839/412/980/food-and-drink-pizza-pizzas-tomato.jpg");
@@ -114,6 +129,7 @@ body {
     width: 100%;
     align-items: center;
     justify-items: center;
+    //  h3 is sized to always stay within the charcoal background
     h3 {
         color:rgb(250, 228, 199);
         font-size: 1.8rem;
@@ -139,6 +155,8 @@ body {
                                                                 font-size: 4rem;
                                                             }
                                                     }
+                                    
+ //  Each "motto" is sized to always stay within the charcoal background
     .motto-1 {
         display: inline-block;
         grid-column: 2 / 4;
@@ -199,6 +217,10 @@ body {
                                             }
                         
 }
+
+// Section just below the HERO Image/motto
+// Button styling is through the _menu-btn partial specified at the top
+// All media queries for these elements are nested within this block
 .tag-btn {
     display: grid;
     position: relative;
@@ -215,6 +237,7 @@ body {
         font-weight: 600;
         font-size: 1.5rem;
         text-align: center;
+        align-self: center;
         @media screen and (min-width: 600px) {
             font-size: 2.2rem;
             
@@ -224,6 +247,9 @@ body {
             }
         }
 }
+
+// The grid changes at 600px to 2fr and at 992px to 3fr
+// All media queries for these elements are nested within this block
 .contents {
     position: relative;
     display: grid;
@@ -235,6 +261,7 @@ body {
     @media screen and (min-width: 1400px) {
         padding: 2% 5%;
     }
+    // This is used to remove the illusion of too much white space
     .blank-space {
         display: none;
         height: 100%;
@@ -287,6 +314,8 @@ body {
             }
             }
         }
+    //  TABLET
+    //  I was trying different nesting and clean-code techniques
     @media screen and (min-width: 600px) {
         .contents-1, .contents-2 {
             grid-template-columns: repeat(2, 1fr);
@@ -325,6 +354,8 @@ body {
                 }
             }
         }
+
+    //  DESKTOP
     @media screen and (min-width: 992px) {
         .contents-1, .contents-2 {
             grid-template-columns: repeat(3, 1fr);

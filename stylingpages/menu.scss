@@ -4,12 +4,16 @@
 @import 'partials/submenu';
 @import 'partials/footer';
 
+// I had originally had more nesting but I ran into some specificity issues and
+// didn't have time to clean it up a bit
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: lato;
-    a, p, h2 {
+    font-weight: 600;
+    a, p {
         text-decoration: none;
         color: #b22222;
     }
@@ -26,6 +30,8 @@ html {
     scroll-behavior: smooth;
     background-color: rgb(218, 196, 167); 
 }
+
+// Body is a 1fr grid positioned to header
 body {
         display: grid;
         grid-template-columns: 1fr;
@@ -33,146 +39,172 @@ body {
         top: 150px;
 }
 .menu-top {
-    display: grid;
     align-items: center;
     position: relative;
-    padding-bottom: 5%;
-    
-    h2 {
-        padding-bottom: 5%;
-        text-align: left;
-        font-size: 1.5rem;
-    }
+    padding: 5% 5%;
     h1 {
         position: relative;
         color: #383838;
         text-align: center;
-        font-size: 2.15rem;
+        font-size: 3rem;
     }
 }
+
+// Menu displayed as a grid for responsiveness
 .menu-grid {
     display: grid;    
-    h4 {
-        color: #383838;
-        text-align: left;
-        } 
-    p {
-        text-align: left;
-        font-weight: 600;
-    }
-    img {
-            display: inline-block;
-            height: 125px;
-            width: auto;
-            justify-self: center;
-            
-    }
-    .menu-box {
-        display: grid;
-        text-align: center;
-        align-items: center;
-        padding-bottom: 5%;
-        hr {
-            width: 50%;
-        }
-        .menu-title {
-            padding-top: 8%;
-            padding-bottom: 2%;
-            font-size: 2.5rem;
-            }
-        .menu-list {
-            display: grid;
-            width: 90%;
-            justify-self: center;
-            padding: 5% 1%;
-            .item {
-                display: grid;
-                grid-template-columns: 3fr 1fr;
-                padding: 3% 1%;
-                    .food-title {
-                        padding-top: 2%;
-                        font-size: 1.5rem;
-                        }
-                    .food-description {
-                        grid-column: 1 / 2;
-                        grid-row: 2 / 3;
-                        text-align: start;
-                        font-size: 1.25rem;
-                        }
-                    .food-price {
-                        grid-column: 2 / 3;
-                        grid-row: 2 / 3;
-                        justify-self: center;
-                        align-self: center;
-                        font-weight: 600;
-                        }
-                    }
-                }
-        
-        h2 {
-            font-size: 2rem;
-        }
-        h4 {
-            font-size: 1.25rem;
-        }
-        
 }
+
+// All images set for mobile-first
+img {
+    display: inline-block;
+    height: 125px;
+    width: auto;
+    justify-self: center;
 }
+
+// Set to a grid to inject HTML menu items, descriptions and prices
+.menu-box {
+    display: grid;
+    padding-bottom: 5%;
+}
+hr {
+    width: 50%;}
+.menu-title {
+    padding-top: 3%;
+    padding-bottom: 2%;
+    font-size: 2.5rem;
+    background-color: rgb(250, 228, 199);
+    text-align: center;
+    color: #b22222;
+        }
+.menu-list {
+    display: grid;
+    width: 90%;
+    justify-self: center;
+    padding: 5% 1%;
+        }
+.item {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    padding: 3% 1%;
+        }
+.food-title {
+    padding-top: 2%;
+    font-size: 1.75rem;
+    color: #383838;
+    text-align: left;
+    font-weight: 600;
+        }
+.food-description {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    font-size: 1.5rem;
+    text-align: start;
+    font-weight: 600;
+        }
+.food-price {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    justify-self: center;
+    align-self: center;
+    font-weight: 600;
+}
+
+// TABLET
+// No drastic changes @600px other than grid templates and positioning
 
 @media screen and (min-width: 600px) {
-    .menu-top {
-        h2 {
-            font-size: 1.7rem;
-        }
-        h1 {
-            font-size: 2.5rem;
+.menu-top {
+    h1 {
+        font-size: 3.5rem;
         }
     }
-    .menu-list {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        padding-top: 2%;
-        padding-bottom: 2%;
-        
-        .pizza-pic {
-            grid-column: 2 / 3;
-            grid-row: 4 / 6;
-            justify-self: right;
+    img {
+        height: 150px;
         }
-        .pasta-pic {
-            grid-column: 1 / 3;
-            grid-row: 2 / 3;
-        }
-        .salad-pic {
-            grid-column: 1 / 2;
-            grid-row: 4 / 5;
-            justify-self: left;
-        }
+.menu-title {
+    font-size: 3rem;
+            }
+.menu-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 2%;
+    padding-bottom: 2%;
+            }
+.food-title {
+    font-size: 2rem;
     }
-    
+.food-description {
+    font-size: 1.75rem;
+        }
+.food-price {
+    font-size: 1.5rem;
+                    }
+.pizza-pic {
+    grid-column: 2 / 3;
+    grid-row: 4 / 6;
+    justify-self: right;
+    }
+.pasta-pic {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+        }
+.salad-pic {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+    justify-self: left;
+        }
 }
 
+// DESKTOP
+// No drastic changes @600px other than grid templates and positioning
+
 @media screen and (min-width: 992px) {
-    .menu-list {
-        grid-template-columns: repeat(3, 1fr);
-        .item {
-            .food-price {
-                font-size: 1.2rem;
+    .menu-top {
+        h1 {
+            font-size: 5rem;
+                }
+        }
+    img {
+        height: 200px;
             }
+    .menu-title {
+                font-size: 4rem;
+                font-weight: 800;
+            }
+    .menu-list {
+                grid-template-columns: repeat(3, 1fr);
         }
+        .food-title {
+            font-size: 2.5rem;
+        }
+        .food-description {
+            font-size: 2rem;
+        }
+        .food-price {
+            font-size: 1.75rem;
+        }   
+        
+                
         .pizza-pic {
-            grid-column: 3 / 4;
-            grid-row: 3 / 5;
-            justify-self: right;
-        }
+                grid-column: 3 / 4;
+                grid-row: 3 / 4;
+                justify-self: right;
+                height: 300px;
+                }
         .pasta-pic {
-            grid-column: 2 / 3;
-            grid-row: 1 / 3;
-        }
+                grid-column: 1 / 2;
+                grid-row: 1 / 3;
+                height: 350px;
+                justify-self: left;
+                align-self: center;
+                padding-right: 2%;
+                }
         .salad-pic {
-            grid-column: 1 / 2;
-            grid-row: 3 / 4;
-            justify-self: left;
-        }
-    }
-}
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+                justify-self: left;
+                height: 300px;
+                }
+            }

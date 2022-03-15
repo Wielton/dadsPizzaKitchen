@@ -2,6 +2,9 @@
 @import 'partials/header';
 @import 'partials/submenu';
 @import 'partials/footer';
+
+//I must admit, the code structure in style.scss is preferred but
+// I didn't have time to reorganize this
 * {
     margin: 0;
     padding: 0;
@@ -27,58 +30,77 @@ body {
     grid-template-columns: 1fr;
     position: absolute;
     top: 150px;
+    width: 100%;
 }
-hr {
-    display: inline-block;
-    justify-self: center;
-    width: 85%;
-    
-}
+
 .main-grid {
     display: grid;
-    padding: 2%;
+    padding: 5%;
     text-align: center;
+    }  
+.top {
+    padding-bottom: 5%;
     h1 {
+        color: #383838;
+        
         font-size: 2.5rem;
-        padding-bottom: 10%;
+        text-align: center;
         }
+    }
+    .blank {
+        display: inline-block;
+    }
+.blurb {
+    
     p {
         font-weight: 600;
-        font-size: 1.5rem;
-        padding-bottom: 10%;
+        font-size: 2rem;
+        text-align: left;
+        background-color: rgb(250, 228, 199);
+        color: firebrick;
+        padding: 2%;
     }
-    h4 {
-        font-size: 1.2rem;
-        padding-bottom: 1%;
-    }
-    h5 {
-        font-size: 1rem;
+}
+
+.contact-pic {
+    position: relative;
+    padding: 5% 0;
+    img {
+        height: 300px;
+        width: auto;
         
-    }
-    h3 {
-        color: #383838;
-        padding-top: 10%;
-        padding-bottom: 20%;
-        a {
-            color: firebrick;
         }
-    }
+}
+.contact-group {
     
-    .contact-pic {
-        position: relative;
-        padding-bottom: 20%;
-        img {
-            height: 300px;
-            width: auto;
+    padding: 5% 0;
+    h4 {
+        background-color: rgb(250, 228, 199);
+            font-size: 1.2rem;
+            padding-bottom: 1%;
+            color: #383838;
+        }
+        h5 {
+            background-color: rgb(250, 228, 199);
+            font-size: 1rem;
+            color: #383838;
+        }
+        h3 {
+            background-color: rgb(250, 228, 199);
+            color: #383838;
+            padding-top: 10%;
+            padding-bottom: 10%;
+            a {
+                color: firebrick;
+            }
         }
     }
-    .map {
+.map {
+    
     overflow:hidden;
     padding-bottom:56.25%;
     position:relative;
     height:0;
-    
-    
     iframe {
         left:0;
         top:0;
@@ -86,47 +108,84 @@ hr {
         width:100%;
         position:absolute;
         }
-    }
-
 }
+
+// TABLET
 @media screen and (min-width: 600px) {
     .main-grid {
         grid-template-columns: repeat(2, 1fr);
-        .contact-pic {
-                top: 50px;
-            img {
-                height: 400px;
-                }
+    }    
+    .top {
+        grid-column: 1 / 3;
+        h1 {
+            font-size: 3rem;
+        }
+        }
+    .blurb {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+    }
+    .contact-pic {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+        img {
+            height: 350px;
             }
-        .map {
-            left: 20%;
-            iframe {
-                grid-column: 2 / 3;
-                grid-row: 2 / 3;
+            }
+    .contact-group {
+            grid-column: 2 / 3;
+            grid-row: 3 / 4;
+            padding-top: 37.5%;
+            padding-bottom: 0;
+        }
+    .map {
+        grid-column: 1 / 3;
+        display: grid;
+        grid-template-columns: 10% auto 10%;
+        iframe {
+            grid-column: 2 / 3;
+            
             }
         }
-    }
-
-
 }
+
+
+// DESKTOP
 @media screen and (min-width: 992px) {
     .main-grid {
         grid-template-columns: repeat(3, 1fr);
-        .contact {
+        grid-gap: 3%;
+    }
+    .top {
+        grid-column: 1 / 4;
+        h1 {
+            font-size: 5rem;
+        }
+    }
+    .blurb  {
+        grid-column: 1 / 4;
+        padding: 1% 2%;
+    }
+        .contact-group {
+            grid-column: 3 / 4;
             position: relative;
-            left: 25%;
+            
         }
         .contact-pic {
-            grid-column: 3 / 4;
-            top: 0;
-            right: 25%;
+            grid-column: 1 / 2;
+
+            
+            
         }
         .map {
-            left: 100%;
+            display: inline-block;
+            grid-column: 2 / 3;
+            grid-row: 3 / 4;
+            justify-content: center;
+            
             iframe {
                 
                 
             }
         }
     }
-}

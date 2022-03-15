@@ -1,3 +1,5 @@
+// Submenu is a component and used across all pages
+
 .submenu {
     display: grid;
     width: 100%;
@@ -7,6 +9,7 @@
         div {
             position: relative;
             }
+            // nested @media for 992px and 1400px
         hr {
             width: 250px;
             @media screen and (min-width: 992px) {
@@ -41,8 +44,9 @@
             display: grid;
             li {
                 text-align: left;
-                
                 font-weight: 600;
+                
+                // nested @media for 992px and 1400px
                 a {
                     opacity: 0.7;
                     color: firebrick;
@@ -62,19 +66,21 @@
                 grid-template-columns: 2fr repeat(3, 1fr) 2fr;
                 align-items: center;
                 padding-top: 5%;
-                
                 p {
                     font-weight: 600;
                     display: inline;
                     text-align: center;
                     grid-column: 1 / 6;
                     padding-bottom: 2%;
+                    color: #383838;
                     a {
                         color: firebrick;
                         opacity: 0.8;
                     }
                     
                     }
+
+                // nested @media for 992px and 1400px
                 hr {
                     grid-column: 1 / 6;
                     grid-row: 2 / 3;
@@ -115,6 +121,8 @@
             }
             
 }
+
+// TABLET and DESKTOP grid layout
 @media screen and (min-width: 600px) {
     .submenu {
         grid-template-columns: repeat(2, 1fr);
