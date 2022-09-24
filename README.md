@@ -1,5 +1,5 @@
 # dadsPizzaKitchen
 
-HTML and CSS static site for school project
+HTML and SCSS static site for school project
 
 Implemented SEO, styling/layout with grid
